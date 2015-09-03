@@ -1,4 +1,7 @@
 coverage2: true
+
+hooks:
+  worker_setup: "bundle exec create_worker $TDDIUM_SESSION_ID $TDDIUM_TID $SOLANO_DW_HOSTNAME $DW_API_TOKEN'_'$TDDIUM_SESSION_ID"
 tddium:
  python:
   python_version: 2.7
