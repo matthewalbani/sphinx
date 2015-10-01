@@ -1,4 +1,4 @@
 mysql: 
   version: "5.5"
 tests: 
-  -mysql -u $TDDIUM_DB_MYSQL_USER -s $TDDIUM_DB_MYSQL_NAME -p$TDDIUM_DB_MYSQL_PASSWORD -e \"SELECT '2015-09-30 00:00:00' as the_time_stamp, CONVERT_TZ('2015-09-30 00:00:00', 'America/Los_Angeles','America/New_York') as converted, HOUR(CONVERT_TZ('2015-09-30 00:00:00', 'America/Los_Angeles','America/New_York')) as hour, HOUR(NOW()) as current_hour_of_day;\"
+  - mysql -u $TDDIUM_DB_MYSQL_USER -s $TDDIUM_DB_MYSQL_NAME -p$TDDIUM_DB_MYSQL_PASSWORD -e "SELECT '2015-09-30 00:00:00' as the_time_stamp, CONVERT_TZ('2015-09-30 00:00:00', 'America/Los_Angeles','America/New_York') as converted, HOUR(CONVERT_TZ('2015-09-30 00:00:00', 'America/Los_Angeles','America/New_York')) as hour, HOUR(NOW()) as current_hour_of_day;"
