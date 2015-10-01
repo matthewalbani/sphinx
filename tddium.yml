@@ -1,5 +1,11 @@
 coverage2: true
-
+ mysql:                                    # Configure MySQL
+   adapter: mysql2                 # Database adapter for ruby (optional)
+   version: '5.5'                  # MySQL version
+   config:                         # Inject ruby/rails config/database.yml options
+     reconnect: false
+     encoding: utf8
+   shards: 3   
 hooks:
   worker_setup: "bundle exec create_worker $TDDIUM_SESSION_ID $TDDIUM_TID $SOLANO_DW_HOSTNAME $DW_API_TOKEN'_'$TDDIUM_SESSION_ID"
 tddium:
