@@ -1,17 +1,3 @@
-coverage2: true
- mysql:                                    # Configure MySQL
-   adapter: mysql2                 # Database adapter for ruby (optional)
-   version: '5.5'                  # MySQL version
-   config:                         # Inject ruby/rails config/database.yml options
-     reconnect: false
-     encoding: utf8
-   shards: 3   
-hooks:
-  worker_setup: "bundle exec create_worker $TDDIUM_SESSION_ID $TDDIUM_TID $SOLANO_DW_HOSTNAME $DW_API_TOKEN'_'$TDDIUM_SESSION_ID"
-tddium:
- python:
-  python_version: 2.7
-  pip_requirements_file: requirements.txt
- tests:
-  - type: nosetests
-    mode: basic
+mysql: 
+  version: "5.5"
+tests: "mysql -u $TDDIUM_DB_MYSQL_USER -s $TDDIUM_DB_MYSQL_NAME -p$TDDIUM_DB_MYSQL_PASSWORD -e \"SELECT '2015-09-30 00:00:00' as the_time_stamp, CONVERT_TZ('2015-09-30 00:00:00', 'America/Los_Angeles','America/New_York') as converted, HOUR(CONVERT_TZ('2015-09-30 00:00:00', 'America/Los_Angeles','America/New_York')) as hour, HOUR(NOW()) as current_hour_of_day;\""
