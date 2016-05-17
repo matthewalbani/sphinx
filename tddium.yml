@@ -3,4 +3,4 @@ python:
  pip_requirements_file: requirements.txt
 tests:
  - type: nosetests
-   mode: basic
+   mode: parallel
