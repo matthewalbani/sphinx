@@ -4,3 +4,6 @@ python:
 tests:
  - type: nosetests
    mode: parallel
+   output: exit-status
+   files:
+     - **/test_*.py
