@@ -4,9 +4,7 @@ jsonarray = {}
 files = []
 
 patterns = {
-  "default"    : "^test\/.*rb$",
-  "subscriber" : "tests/Subscriber/.*Test.rb",
-  "event"      : "tests/event/.*Test.rb"
+  "default"    : "^tests\/test_.*\.py$"
   }
 
 #get profile name
