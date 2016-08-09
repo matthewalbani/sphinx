@@ -44,8 +44,8 @@ for root, dirnames, filenames in os.walk(test_dir):
 print files
 
 #set up parallel command mode
-commands = []
-commands[0] = {
+#should be a list of dictionaries
+commands = [{
       "type"            : "phpunit",
       "mode"            : "parallel",
       "output"          : "exit-status",
@@ -53,7 +53,7 @@ commands[0] = {
       "config"          : "phpunit.xml",
       "files"           :  [profile_pattern],
       "files_expanded"  : files
-      }
+      }]
 
 print commands
 
