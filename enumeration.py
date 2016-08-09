@@ -44,7 +44,8 @@ for root, dirnames, filenames in os.walk(test_dir):
 print files
 
 #set up parallel command mode
-commands = {
+commands = []
+commands[0] = {
       "type"            : "phpunit",
       "mode"            : "parallel",
       "output"          : "exit-status",
