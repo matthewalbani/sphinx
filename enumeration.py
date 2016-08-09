@@ -50,7 +50,7 @@ commands = {
       "output"          : "exit-status",
       "command"         : "vendor/bin/solano-phpunit",
       "config"          : "phpunit.xml",
-      "files"           :  profile_pattern,
+      "files"           :  [profile_pattern],
       "files_expanded"  : files
       }
 
