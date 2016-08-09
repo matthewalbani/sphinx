@@ -46,11 +46,8 @@ print files
 #set up parallel command mode
 #should be a list of dictionaries
 commands = [{
-      "type"            : "phpunit",
+      "type"            : "nosetests",
       "mode"            : "parallel",
-      "output"          : "exit-status",
-      "command"         : "vendor/bin/solano-phpunit",
-      "config"          : "phpunit.xml",
       "files"           :  [profile_pattern],
       "files_expanded"  : files
       }]
